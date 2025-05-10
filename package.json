@@ -1,0 +1,29 @@
+{
+  "name": "playstore-scraper",
+  "version": "1.0.0",
+  "description": "A research tool that scrapes Google Play Store data and calculates winning scores for app ideas",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "google-play",
+    "scraper",
+    "market-research",
+    "app-ideas"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "google-play-scraper": "^9.1.1",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

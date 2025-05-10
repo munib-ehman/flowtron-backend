@@ -1,0 +1,46 @@
+### Search for apps
+GET http://localhost:3000/api/search?query=fitness tracker
+Content-Type: application/json
+
+### Get app details
+GET http://localhost:3000/api/app/com.runtastic.android
+Content-Type: application/json
+
+### Analyze an app idea (with manual keywords)
+# Now returns last 30 days install estimates instead of daily installs
+POST http://localhost:3000/api/analyze
+Content-Type: application/json
+
+{
+  "idea": "smart home automation app",
+  "keywords": ["smart home", "home automation", "iot app", "smart devices"]
+}
+
+### Analyze an app idea (with automatic keyword extraction)
+# Uses genre for more targeted search results
+POST http://localhost:3000/api/analyze
+Content-Type: application/json
+
+{
+  "idea": "fitness tracker app that motivates users with personalized coaching and gamification",
+  "genre": "Health & Fitness"
+}
+
+### Analyze an app idea for a food delivery service
+# Returns competitors with similarity index ≥ 10
+POST http://localhost:3000/api/analyze
+Content-Type: application/json
+
+{
+  "idea": "food delivery app that connects local restaurants with nearby customers and offers real-time order tracking"
+}
+
+### Analyze a game app idea
+# The system will intelligently handle "game" keyword
+POST http://localhost:3000/api/analyze
+Content-Type: application/json
+
+{
+  "idea": "casual puzzle game with colorful graphics and daily challenges",
+  "genre": "Games"
+} 
