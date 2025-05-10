@@ -47,10 +47,6 @@ exports.analyzeIdea = async (req, res, next) => {
       }
     }
 
-    console.log(
-      `Analyzing idea: "${idea}" with keywords: ${extractedKeywords.join(", ")}`
-    );
-
     // Create app idea object for similarity calculations
     const appIdea = {
       idea,
@@ -158,6 +154,7 @@ exports.analyzeIdea = async (req, res, next) => {
       competitorsCount: filteredCompetitors.length,
       ideaScore: analysisResult.score,
       avgSimilarityIndex: Math.round(avgSimilarityIndex),
+      averageUniqueIndex: Math.round(100 - avgSimilarityIndex),
       highestSimilarityIndex: highestSimilarityIndex,
       scoreExplanation: analysisResult.explanation,
       marketInsights: {
